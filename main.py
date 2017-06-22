@@ -22,10 +22,23 @@ form = """
                 width: 540px;
                 height: 120px;
             }
+            input {
+                display: block;
+            }
         </style>
     </head>
     <body>
-     hello <!-- create your form here -->
+        <form action="" method="POST">
+            <label for="rot">
+                Rotate by:
+            </label>
+            <input type="number" name="rot" id="rot" value="0">
+            <label>
+                Message to encode:
+            </label>
+            <textarea name="text"></textarea>
+            <input type="submit">
+        </form>
     </body>
 </html>
 """
