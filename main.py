@@ -36,7 +36,7 @@ form = """
             <label>
                 Message to encode:
             </label>
-            <textarea name="text"></textarea>
+            <textarea name="text">{0}</textarea>
             <input type="submit">
         </form>
     </body>
@@ -46,7 +46,7 @@ form = """
 
 @app.route("/")
 def index():
-    return form
+    return form.format("")
 
 @app.route("/", methods=["POST"])
 def encrypt():
@@ -55,7 +55,7 @@ def encrypt():
     message = request.form["text"]
 
     encrypted_message = rotate_string(message, rot)
-    return "<h1>" + encrypted_message + "</h1>"
+    return form.format(encrypted_message)
 
 
 
